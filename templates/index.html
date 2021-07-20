@@ -1,0 +1,59 @@
+<!DOCTYPE HTML>
+<HEAD>
+    <link rel="stylesheet" href="stylingpage.css">
+  <title>Task-Manager REST API</title>
+    <link rel="icon" href="task-manager-note-icon.jpeg">
+</HEAD>
+
+<body bgcolor= #cceeff>
+  <div style="font-size:2rem"> <u><b>Task Manager REST API GUIDE</b></u></div>
+<P>
+  This page is intended to provide all the details regarding the endpoints present in the TASK MANAGER REST API like their names,type and uses. </p>
+<img src="">
+  <em></em>
+<strong></strong>
+   <b></b>
+ <table border="5" cellpadding="8">
+
+ <tr align="center">
+   <th>Endpoints</th><th>Request type</th><th>Description</th>
+ </tr>
+ <tr><td>'/'</td> <td>GET</td> <td>To get the landing page of api</td></tr>
+ <tr><td>'/users'</td> <td>POST</td> <td>To register new user<br> Required:json data with "name","email","password"<br> Return: The details of user created along with and a bearer auth token</td>
+ <tr><td>'/users/login'</td> <td>POST</td> <td>To login in the user's account <br> Required: json data with "email" and "password" <br> Returns: Details of user</td>
+ <tr><td>'/user/logout'</td> <td>POST</td> <td>To log out from user's account <br> Required:An auth token of logged in user <br> Returns: Message of successfull logut </td></tr>
+ <tr><td>'/user/logoutall'</td> <td>POST</td> <td>To logout from all the sessions of account <br> Required:An auth token of logged in user <br> Returns: Message of successfull logut </td>
+ <tr><td>'/users/me'</td> <td>GET</td> <td>To read information of the user's profile from database<br>Required:An auth token of logged in user <br> Returns: The details of the user</td>
+ <tr><td>'/users/updateme'</td> <td>PATCH</td> <td> To update user's details <br> Required:An auth token of logged in user along with the updates to be made in profile <br> Returns: Updated Details of user </td>
+ <tr><td>'/users/me'</td> <td>DELETE</td> <td> To delete a user and all their tasks of particular id <br> Required:An auth token of logged in user <br> Returns: Details of the deleted user </td>
+ <tr><td>'/user/me/avatar'</td> <td>POST</td> <td>To upload user's profile pic<br>Required:An auth token of logged in user along with pic in either .jpg/.jpeg/.png file<br> Returns: None  </td>
+ <tr><td>'/user/me/avatar'</td> <td>DELETE</td> <td>To delete user's profile pic <br> Required:An auth token of logged in user<br> Returns: None  </td>
+ <tr><td>'/task'</td> <td>POST</td> <td>To create tasks from the logged in user <br> Required:An auth token of logged in user with json data like 'desc' and "status"<br> Returns: The details of currently created task </td>
+ <tr><td>'/task'</td> <td>GET</td> <td>To read details of all the tasks in database that authenicated user created  <br> Required:An auth token of logged in user.Prams like 'status', 'limit', 'skip', 'sortBy' for Searching, Sorting and Pagination.<br> Returns: Details of all the tasks created by logged in user </td>
+ <tr><td>'/task/:id'</td><td>GET</td><td>To read info of particular task eg by id <br>Required : An Authorization bearer token of logged in user along with the id of task to be searched.<br>Returns : Json data with searched task.</td>
+ <tr><td>'/task/:id'</td> <td>PATCH</td> <td>To update task's details by id <br>Required : An Authorization bearer token of logged in user and upates and id of the task that has to be Updated.<br>Returns : Updated details of the given task.</td>
+ <tr><td>'task/:id'</td> <td>DELETE</td> <td> To delete a task of particular id  <br>Required : An Authorization bearer token of logged in user along with the id of task to be deleted.<br>Returns : Json data of deleted task. </td>
+  </table>
+  <br>
+  <br>
+  <p id="creator">Created by <b><u>Aradhya Tripathi</u></b></p>
+  <a href="http://www.linkedin.com/in/Aradhya-Tripathi12" target="_blank"><button class="btn btn-primary button-width">LinkedIn</button></a>
+  <a href="https://github.com/Aradhya-12/task-manager-api" target="_blank"><button class="btn btn-primary button-width">Github</button></a>
+    </body>
+  </html>
+    
+    
+    
+    
+    
+    
+    
+
+    
+    
+
+   
+   
+     
+ 
+        

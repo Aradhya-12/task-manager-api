@@ -2,14 +2,18 @@ const express = require('express')
 const User = require('./models/user.js')
 const routerTask = require('./routers/tasks.js')
 const routerUser = require('./routers/users.js')
+const path = require('path')
 // to connect our file to database and set up database 
 require('./mongoose.js')
-
-
 
 const app = express()
 
 const port = process.env.PORT 
+
+const staticDataDirectory= path.join(__dirname, '../templates')
+
+// loading static files like css,js,html etc
+app.use(express.static(staticDataDirectory))
 
 //express turns our incoming json request into json object
 app.use(express.json())
